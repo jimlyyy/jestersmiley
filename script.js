@@ -296,5 +296,13 @@ document.documentElement.style.setProperty('--x-rotate', '12');
     attributes: true,
     attributeFilter: ['style'] // hanya pantau perubahan style (var CSS)
   });
+  document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector('.meme-track');
+  if (track && !track.dataset.duplicated) {
+    track.innerHTML += track.innerHTML; // gandakan isi agar bisa looping
+    track.dataset.duplicated = "true";
+  }
+});
+
 
 })();
