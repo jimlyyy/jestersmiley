@@ -517,3 +517,56 @@ body {
 }
 /* Remove previous hard overrides; rely on clamps above for proportional scaling */
 
+/* ===== INFINITE MEME SCROLL (SEAMLESS LOOP) ===== */
+.memes-section {.memes-section {
+  background: #000; /* warna hitam pekat */
+  padding: 50px 0;
+  overflow: hidden;
+  text-align: center;
+}
+}
+
+.section-title {
+  color: rgb(0, 0, 0);
+  font-size: 36px;
+  font-weight: 900;
+  margin-bottom: 30px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.meme-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: scrollRight 40s linear infinite;
+}
+
+.meme-card {
+  flex: 0 0 auto;
+  width: 220px;
+  height: 260px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000000;
+}
+
+.meme-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* animasi berjalan dari kiri ke kanan */
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* pause saat hover */
+.meme-track:hover {
+  animation-play-state: paused;
+}
